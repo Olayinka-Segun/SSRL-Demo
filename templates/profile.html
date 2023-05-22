@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page </title>
+</head>
+<body>
+    <header class="header row">
+		<ul>
+			<li><a href ="{{url_for('home')}}">Home</a></li>
+			<li><a href ="{{url_for('logout')}}">Logout</a></li>
+            <li><a href ="{{url_for('update')}}">Update</a></li>
+
+		</ul>    
+	</header>
+    <div class="topbar">
+        <h2>Welcome!! You are in Display Page!! </h2>                   
+    </div> </br>
+    <div class="contentbar">
+        <h1>Your Details</h1> </br>
+        {% block content %}
+            <div class="border">
+                <ul>
+                    <li>Fullname: {{ user.fullname }}</li>
+                    <li>Email: {{ user.email }}</li>
+                    <li>PhoneNo: {{ user.phone }}</li>
+                    <li>Username: {{ user.username }}</li>
+                    <li>Role: {{ user.role }}</li>
+                    <li>Stack: {{ user.stack }}</li>
+                </ul>
+            
+            </div>
+        {% endblock %}                                       
+    </div>
+
+</body>
+</html>

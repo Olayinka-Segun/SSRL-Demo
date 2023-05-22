@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %} 
+            {% for message in messages %}
+                <p>{{ message}}</p>
+            {% endfor %}
+        {% endif %} 
+    {% endwith %}    
+    <div class="loginbox">
+        <span><a href="{{url_for('register')}}">Don't have an account? Sign up</a></span>
+        <h1>Login</h1>
+        <form action="{{url_for('login')}}" method='POST' >
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="text" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+            <a href="#">Forgot password?</a>
+        </form>
+    </div>        
+</body>
+</html>
